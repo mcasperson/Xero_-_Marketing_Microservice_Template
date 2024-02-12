@@ -1,30 +1,3 @@
-step "send-an-email" {
-    name = "Send an Email"
-
-    action {
-        action_type = "Octopus.Email"
-        properties = {
-            Octopus.Action.Email.Body = "hi"
-            Octopus.Action.Email.Subject = "blah"
-            Octopus.Action.Email.To = "a@a.com"
-        }
-    }
-}
-
-step "manual-intervention-required" {
-    name = "Manual Intervention Required"
-
-    action {
-        action_type = "Octopus.Manual"
-        environments = ["production"]
-        properties = {
-            Octopus.Action.Manual.BlockConcurrentDeployments = "False"
-            Octopus.Action.Manual.Instructions = "Do you approve this deployment?"
-            Octopus.Action.Manual.ResponsibleTeamIds = "global/matthew"
-        }
-    }
-}
-
 step "generate-variables" {
     name = "Generate Variables"
 
