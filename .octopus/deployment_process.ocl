@@ -8,7 +8,7 @@ step "generate-variables" {
             Octopus.Action.Script.ScriptBody = <<-EOT
                 Set-OctopusVariable -name "OctopusEnvironmentName" -value $OctopusParameters["Octopus.Environment.Name"]
                 
-                EOT
+                    EOT
             Octopus.Action.Script.ScriptSource = "Inline"
             Octopus.Action.Script.Syntax = "PowerShell"
         }
@@ -178,7 +178,7 @@ step "deploy-container" {
                   "CreateFeedSecrets": "False"
                  }
                 ]
-                EOT
+                    EOT
             Octopus.Action.KubernetesContainers.DeploymentName = "#{Kubernetes.Deployment.Name}"
             Octopus.Action.KubernetesContainers.DeploymentResourceType = "Deployment"
             Octopus.Action.KubernetesContainers.DeploymentStyle = "RollingUpdate"
@@ -265,7 +265,7 @@ step "smoke-test" {
                     exit 1
                 fi
                 
-                EOT
+                    EOT
             Octopus.Action.Script.ScriptSource = "Inline"
             Octopus.Action.Script.Syntax = "Bash"
             OctopusUseBundledTooling = "False"
@@ -351,7 +351,7 @@ step "security-scan" {
                 
                 exit 0
                 
-                EOT
+                    EOT
             Octopus.Action.Script.ScriptSource = "Inline"
             Octopus.Action.Script.Syntax = "Bash"
         }
